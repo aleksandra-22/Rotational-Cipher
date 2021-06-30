@@ -15,11 +15,6 @@ def rot_word(string)
     end.join
 end
 
-def rot13_message(messages)
-    messages.map do |message|
-    end
-end
-
 puts "Enter a message: "
 message = gets.chomp
 puts "Encoded message: ", rot_word(message)

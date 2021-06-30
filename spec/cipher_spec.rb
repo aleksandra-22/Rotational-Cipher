@@ -8,16 +8,14 @@ RSpec.describe 'Cipher: ' do
                 expect(rot13('h')).to eq('u')
             end
         end
-
     end
+    describe '#rot_word' do
+        context 'level 2' do
+            it 'properly encodes text with spaces' do
+                expect(rot_word('hello')).to eq('uryyb')
+                expect(rot_word('how are you')).to eq('ubj ner lbh')
 
-
-
-
-
-
-
-
-
-    
+            end
+        end
+    end  
 end
