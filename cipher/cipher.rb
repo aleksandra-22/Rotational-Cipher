@@ -20,6 +20,6 @@ def rot13_message(messages)
     end
 end
 
-puts "Enter a sentence: "
+puts "Enter a message: "
 message = gets.chomp
-puts rot_word(message)
+puts "Encoded message: ", rot_word(message)
