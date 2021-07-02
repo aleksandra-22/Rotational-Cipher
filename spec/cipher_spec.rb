@@ -1,21 +1,18 @@
-require_relative '../cipher/cipher.rb'
+require_relative '../lib/cipher.rb'
 
 RSpec.describe 'Cipher: ' do
-    describe '#rot13' do
-        context 'level 1' do
-            it 'encodes text using rot 13' do
-                expect(rot13('a')).to eq('n')
-                expect(rot13('h')).to eq('u')
-            end
-        end
-    end
-    describe '#rot_word' do
-        context 'level 2' do
-            it 'properly encodes text with spaces' do
-                expect(rot_word('hello')).to eq('uryyb')
-                expect(rot_word('how are you')).to eq('ubj ner lbh')
+    describe '#cipher' do
 
+        context "'Hello' shift 5 times" do
+            it "returns 'Mjqqt'" do
+                expect(Cipher.new(5).cipher('Hello')).to eq('Mjqqt')
             end
         end
-    end  
+
+        context "'How are you' shift 12 times" do
+            it "returns 'Tai mdq kag'" do
+                expect(Cipher.new(12).cipher('How are you')).to eq('Tai mdq kag')
+            end
+        end       
+     end
 end

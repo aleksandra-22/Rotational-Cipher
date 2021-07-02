@@ -9,16 +9,14 @@ class Cipher
   end
 
   def cipher(string)
-    array = []
-    string.each_char.map do |character|
+    array = string.each_char.map do |character|
       if character =~ /[A-Za-z]/
-        array << cipher_character(character)
+        cipher_character(character)
       else
-        array << character
+        character
       end
     end
-    result = array.join
-    result
+    array.join
   end
 
   def cipher_character(character)
