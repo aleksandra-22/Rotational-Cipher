@@ -1,5 +1,4 @@
 class Cipher
-
   LOW_ALPHABET = ("a".ord.."z".ord)
   HIGH_ALPHABET = ("A".ord.."Z".ord)
   ALPHABET_LENGTH = 26
@@ -8,8 +7,8 @@ class Cipher
     @key = key
   end
 
-  def cipher(string)
-    array = string.each_char.map do |character|
+  def encrypt(encrypted_message)
+    array = encrypted_message.each_char.map do |character|
       if character =~ /[A-Za-z]/
         cipher_character(character)
       else
@@ -30,5 +29,4 @@ class Cipher
     end
     rot_character.chr
   end
-
 end
