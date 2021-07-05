@@ -9,4 +9,4 @@ puts Cipher.new(5).encrypt(text)
 puts Cipher.new(13).encrypt(text)
 puts Cipher.new(26).encrypt(text)
 
-puts Cipher.new(1000).encrypt(text)
+puts Cipher.new(27).encrypt(text)
