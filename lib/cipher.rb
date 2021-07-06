@@ -5,20 +5,20 @@ class Cipher
 
   def initialize(key)
     @key = key
-    if key > ALPHABET_LENGTH || key < 0
-      raise RangeError, "Please enter a number between 0 and 26."
+    unless (0..ALPHABET_LENGTH).include?(key)
+      raise RangeError, "Please enter a number between 0 and #{ALPHABET_LENGTH}."
     end
   end
 
   def encrypt(raw_message)
     encrypted_message = raw_message.each_char.map do |character|
-      if character =~ /[A-Za-z]/
+      if (LOW_ALPHABET).include?(character.ord)
         cipher_character(character)
       else
-        character
+        (HIGH_ALPHABET).include?(character.ord)
+        cipher_character(character)
       end
-    end
-    encrypted_message.join
+    end.join
   end
 
   def cipher_character(character)
