@@ -11,14 +11,7 @@ class Cipher
   end
 
   def encrypt(raw_message)
-    encrypted_message = raw_message.each_char.map do |character|
-      if (LOW_ALPHABET).include?(character.ord)
-        cipher_character(character)
-      else
-        (HIGH_ALPHABET).include?(character.ord)
-        cipher_character(character)
-      end
-    end.join
+    raw_message.each_char.map { |character| cipher_character(character) }.join
   end
 
   def cipher_character(character)
